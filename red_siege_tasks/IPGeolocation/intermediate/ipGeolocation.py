@@ -52,7 +52,7 @@ def ipQueryList(path2File, api_Key):
                 print(f"\n \033[1;33;40m[✓] [{dt_str}] ~ Quering IP in List ~ \033[0m")
                 print(f"\tIP Address: {ipaddr}\r\n\tOrganization: {organization}\r\n\tCountry: {country}\r\n\tCountry Code: {countryCode}")
     except (IsADirectoryError, FileNotFoundError) as e:
-        print("[x] Please enter the correct file list path that contains your IP Address!")
+        print("[x] Please enter the correct path to file that contains your IP Addresses!")
 
 try:
     if len(sys.argv) != 3:
