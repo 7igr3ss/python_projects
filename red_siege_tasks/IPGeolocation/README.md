@@ -19,9 +19,9 @@ Usage: ./ipGeolocation.py </path/file> <api_key>
 Example: ./ipGeolocation.py /path/ipaddress_list.txt f2fb2bd77bab4b27ac702b0e363277e2
 ```
 
-
 ---
 **Expert Task:** Have the script read from a file containing both single IP addresses and CIDR notation, having it process it both types.
 ```
-Work in progress...
+Usage: ./ipGeolocation.py </path/file> <api_key>
+Example: ./ipGeolocation.py /path/ipaddress_list.txt f2fb2bd77bab4b27ac702b0e363277e2
 ```
