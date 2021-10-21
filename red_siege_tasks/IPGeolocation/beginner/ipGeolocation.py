@@ -1,13 +1,20 @@
 #!/usr/bin/env python3
 
 print("""
+\033[1;36;40m
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-PROJECT NAME: ipGeolocation for single IPs
-VERSION: 1.0.0
+PROJECT NAME: ipGeolocation for IPs in a list
+VERSION: 1.0.1
 AUTHOR: Empress O. Obazee (7igr3ss)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+\033[0m
 """)
 
+print("""
+
+\033[1;36;40m###################################### IPGEOLOCATION SCRIPT ###################################### \033[0m
+    
+""")
 
 # Imports
 import requests
@@ -26,7 +33,6 @@ def help():
 
 # IP query
 def ipQuery(ipAddress, api_Key):
-    print("###################################### IPGEOLOCATION SCRIPT ######################################")
     data = {'ip' : ipAddress, 'apiKey' : api_Key}
     reqs = requests.get("https://api.ipgeolocation.io/ipgeo", params=data)
     
@@ -38,7 +44,7 @@ def ipQuery(ipAddress, api_Key):
     organization = json_data['organization']
     countryCode = json_data['country_code3']
     country = json_data['country_name']
-    print(f"======= [✓] [{dt_str}] Quering IP =======")
+    print(f"\033[1;33;40m[✓] [{dt_str}] ~ Quering IP ~ \033[0m")
     print(f"\tIP Address: {ipaddr}\r\n\tOrganization: {organization}\r\n\tCountry: {country}\r\n\tCountry Code: {countryCode}")
 
 try:
