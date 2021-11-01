@@ -4,7 +4,7 @@
 PROJECT NAME: Web Header Reporting
 VERSION: 1.0.0
 AUTHOR: Empress O. Obazee (7igr3ss)
-COPYRIGHT © 2021
+COPYRIGHT © 2021 Empress Obazee
 [Work in progress]
 """
 
