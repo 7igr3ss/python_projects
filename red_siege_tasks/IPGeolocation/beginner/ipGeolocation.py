@@ -2,10 +2,10 @@
 
 
 """
-PROJECT NAME: ipGeolocation for IPs in a list
+PROJECT NAME: ipGeolocation for IPs in a list (Beginner)
 VERSION: 1.0.0
 AUTHOR: Empress O. Obazee (7igr3ss)
-COPYRIGHT © 2021
+COPYRIGHT © 2021 Empress Obazee
 """
 
 print("""

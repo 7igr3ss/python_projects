@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 
 """
-PROJECT NAME: Web Header Reporting
+PROJECT NAME: Web Header Reporting (mockup)
 VERSION: 1.0.0
 AUTHOR: Empress O. Obazee (7igr3ss)
+COPYRIGHT © 2021 Empress Obazee
 """
 
 # Imports
@@ -109,12 +110,6 @@ class WebHrScan:
                     print(f"\t{YELLOW}[!] Configured Setting(s): {rsp_xfo}!")
                 if rsp_xfo is None:
                     print(f"\n\t{BRIGHT_RED}[x] X-Frame-Options is missing!")
-
-# Output results to a file
-def output_file(self):
-    with open(output_file, mode='w', encoding='utf-8') as output_results:
-        output_results.write()
-        print(f"[!] Results have been writen to - {self.output} file!")
 
 
 if __name__ == '__main__':

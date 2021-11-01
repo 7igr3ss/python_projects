@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-PROJECT NAME: Web Header Reporting
+PROJECT NAME: Web Header Reporting (Beginner)
 VERSION: 1.0.0
 AUTHOR: Empress O. Obazee (7igr3ss)
 """
