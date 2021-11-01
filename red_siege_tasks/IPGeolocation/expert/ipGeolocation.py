@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
 
-print("""
-\033[1;36;40m
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""
 PROJECT NAME: ipGeolocation for IPs in a list
 VERSION: 1.0.0
 AUTHOR: Empress O. Obazee (7igr3ss)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
-\033[0m
-""")
+COPYRIGHT © 2021
+"""
 
 print("""
 
