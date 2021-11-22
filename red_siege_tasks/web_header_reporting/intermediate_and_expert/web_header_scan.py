@@ -13,7 +13,7 @@ import argparse
 import requests
 
 # Banner
-BANNER_INFO = "================== Retrieving Web Headers =================="
+BANNER_INFO = "\n" + ("=" * 18) + " Script to Retrieve Security Web Headers " + ("=" * 18) + "\n"
 
 # Creating ArugumentParser Arguments
 EPL_INFO = "Queries the supplied urls for vulnerable web headers"
@@ -59,8 +59,8 @@ class WebHrScan:
         rsp_sts = resp.headers.get(STS)
         rsp_csp = resp.headers.get(CSP)
         rsp_xfo = resp.headers.get(XFO)
-        print(BANNER_INFO)
-        data_entry = f"\nUrl: {self.url}"
+        data_entry += BANNER_INFO
+        data_entry += f"\nUrl: {self.url}"
         if rsp_sts is not None:
             data_entry += f"\n\t[✓] Strict-Transport-Security has been set!"
             data_entry += f"\n\t[!] Configured Setting(s): {rsp_sts}!"
@@ -83,34 +83,33 @@ class WebHrScan:
 
     # Query headers for multiple url links from a file
     def query_file(self):
-        with open(self.file, mode='r', encoding='utf-8') as read_links:
-            for links in read_links:
-                rem_space = links.replace("\n","").replace("\r","")
-                data_entry = ""
-                resp = requests.get(rem_space)
+        print(BANNER_INFO)
+        with open(self.file, mode='r', encoding='utf-8') as read_file:
+            for links in read_file.readlines():
+                resp = requests.get(links)
                 rsp_sts = resp.headers.get(STS)
                 rsp_csp = resp.headers.get(CSP)
                 rsp_xfo = resp.headers.get(XFO)
-                data_entry += BANNER_INFO
-                data_entry += f"\nUrl: {links}"
+                print(f"\n\nUrl: {links}")
                 if rsp_sts is not None:
-                    data_entry += f"\n\t[✓] Strict-Transport-Security has been set!"
-                    data_entry += f"\n\t[!] Configured Setting(s): {rsp_sts}!"
+                    print(f"\n\t[✓] Strict-Transport-Security has been set!")
+                    print(f"\n\t[!] Configured Setting(s): {rsp_sts}!")
                 else:
-                    data_entry += f"\n\t[x] Strict-Transport-Security is missing!"
+                    print(f"\n\t[x] Strict-Transport-Security is missing!")
 
                 if rsp_csp is not None:
-                    data_entry += f"\n\t[✓] Content-Security-Policy has been set!"
-                    data_entry += f"\n\t[!] Configured Setting(s): {rsp_csp}!"
+                    print(f"\n\t[✓] Content-Security-Policy has been set!")
+                    print(f"\n\t[!] Configured Setting(s): {rsp_csp}!")
                 else:
-                    data_entry += f"\n\t[x] Content-Security-Policy is missing!"
+                    print(f"\n\t[x] Content-Security-Policy is missing!")
 
                 if rsp_xfo is not None:
-                    data_entry += f"\n\t[✓] X-Frame-Options has been set!"
-                    data_entry += f"\n\t[!] Configured Setting(s): {rsp_xfo}!"
+                    print(f"\n\t[✓] X-Frame-Options has been set!")
+                    print(f"\n\t[!] Configured Setting(s): {rsp_xfo}!")
                 else:
-                    data_entry += f"\n\t[x] X-Frame-Options is missing!"
-                return data_entry
+                    print(f"\n\t[x] X-Frame-Options is missing!")
+
+
 
 # Output to file
 def output_file(data_to_write, output_file=args.OUTPUT):
